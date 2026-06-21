@@ -55,10 +55,12 @@
             flex-shrink: 0;
         }
 
-        nav .logo {
+      nav .logo {
             height: 38px;
             width: auto;
             display: block;
+            /* Inverts light text to dark; adjusts contrast to keep lines sharp */
+            filter: invert(0.9) brightness(0.4) contrast(1.2); 
         }
         
         nav .links {

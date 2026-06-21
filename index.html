@@ -76,21 +76,22 @@
         }
         nav .links a:hover { opacity: 0.8; }
 
-        /* Cover Photo Framework */
+       /* Cover Photo Framework */
         .hero-image-placeholder {
             width: 100%;
-            height: auto;                 /* Let height adjust naturally based on photo aspect ratio */
+            height: 360px;                 /* Restores the fixed window height */
             background-color: #151413;
             border: 1px solid var(--border-color);
             margin-bottom: 60px;
-            overflow: hidden;
+            overflow: hidden;              /* Cleanly cuts off anything spilling out */
         }
 
         .hero-image-placeholder img {
             width: 100%;
-            height: auto;
-            display: block;               /* Removes baseline visual gaps under image */
-            object-fit: cover;
+            height: 100%;                  /* Forces image to fill the 360px height slot */
+            display: block;                
+            object-fit: cover;             /* Auto-crops center without distorting ratios */
+            object-position: center;       /* Centers the focus of the photo */
         }
 
         /* Typography & Tone */

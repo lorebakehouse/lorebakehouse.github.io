@@ -33,18 +33,26 @@
             margin: 0 auto;
             padding: 90px 24px;
         }
-
-                       /* Navigation Strip */
+        /* Navigation Strip */
         nav {
             display: flex;
             align-items: center;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 20px;
             margin-bottom: 30px;
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
+            font-size: 0.82rem;           /* Slightly smaller text */
+            letter-spacing: 1.2px;        /* Tighter letter spacing */
             text-transform: uppercase;
-            gap: 60px;                    /* ← This controls the big gap between logo and links */
+        }
+
+        .nav-container {
+            max-width: 1200px;            /* Match photo width */
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 55px;                    /* Gap between logo and links */
+            width: 100%;
         }
 
         nav .brand-container {
@@ -62,8 +70,8 @@
         
         nav .links {
             display: flex;
-            gap: 22px;           /* Space between individual links — keep this as-is */
-            flex-wrap: nowrap;
+            gap: 18px;                    /* Tighter gap between links */
+            flex-wrap: nowrap;            /* Force single line */
         }
 
         nav .links a { 
@@ -260,20 +268,22 @@
 <body>
 
     <div class="wrapper">
-           <!-- Navigation Strip -->
+                   <!-- Navigation Strip -->
         <nav>
-            <div class="brand-container">
-                <img src="Lore Bakehouse-logos_transparent cropped.png" alt="Lore Bakehouse" class="logo">
-            </div>
-            <div class="links">
-                <a href="#provisions">Find Us</a>
-                <a href="#menu">Menu</a>
-                <a href="#philosophy">Philosophy</a>
-                <a href="#preservation">Storage Tips</a>
-                <a href="#contact">Contact</a>
+            <div class="nav-container">
+                <div class="brand-container">
+                    <img src="Lore Bakehouse-logos_transparent cropped.png" alt="Lore Bakehouse" class="logo">
+                </div>
+                <div class="links">
+                    <a href="#provisions">FIND US</a>
+                    <a href="#menu">MENU</a>
+                    <a href="#philosophy">PHILOSOPHY</a>
+                    <a href="#preservation">STORAGE TIPS</a>
+                    <a href="#contact">CONTACT</a>
+                </div>
             </div>
         </nav>
-
+		
         <!-- Landscape / Woodfire Workshop Hero Image Placeholder -->
         <div class="hero-image-placeholder">
 		<img src="IMG_0863.jpeg" alt="Lore Bakehouse" class="image">

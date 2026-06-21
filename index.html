@@ -34,7 +34,7 @@
             padding: 90px 24px;
         }
 
-                /* Navigation Strip */
+                       /* Navigation Strip */
         nav {
             display: flex;
             align-items: center;
@@ -44,12 +44,13 @@
             font-size: 0.85rem;
             letter-spacing: 1.5px;
             text-transform: uppercase;
+            gap: 60px;                    /* ← This controls the big gap between logo and links */
         }
 
         nav .brand-container {
             display: flex;
             align-items: center;
-            flex-shrink: 0;           /* Keeps logo from shrinking */
+            flex-shrink: 0;
         }
 
         nav .logo {
@@ -61,7 +62,7 @@
         
         nav .links {
             display: flex;
-            gap: 35px;                /* Space between links */
+            gap: 22px;           /* Space between individual links — keep this as-is */
             flex-wrap: nowrap;
         }
 

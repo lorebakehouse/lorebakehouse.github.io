@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lore Bakehouse</title>
+    <style>
+        /* Yasakagama Inspired Layout with Terracotta Accents */
+        :root {
+            --bg-color: #1c1b1a;       /* Woodfire soot / deep charcoal kiln interior */
+            --text-color: #ece9e2;     /* Raw unbleached linen / pale flour cream */
+            --muted-text: #8e8a82;     /* Ash gray */
+            --border-color: #33302c;   /* Weathered timber / dark stone line */
+            --pop-color: #e28455;      /* The pop: Warm terracotta / raw copper */
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-accent: "Georgia", "Times New Roman", serif;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            letter-spacing: 0.2px;
+        }
+
+        .wrapper {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 90px 24px;
+        }
+
+        /* Navigation Strip */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px; 
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        nav .brand-container {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .logo {
+            height: 38px;
+            width: auto;
+            display: block;
+            opacity: 0.95;
+        }
+        
+        nav .links a { color: var(--pop-color); text-decoration: none; margin-left: 24px; transition: opacity 0.2s ease; }
+        nav .links a:hover { opacity: 0.8; }
+
+        /* Landscape/Workshop Hero Placeholder */
+        .hero-image-placeholder {
+            width: 100%;
+            height: 360px;
+            background-color: #151413;
+            border: 1px solid var(--border-color);
+            margin-bottom: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted-text);
+            font-family: var(--font-accent);
+            font-style: italic;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Typography & Tone */
+        h1 {
+            font-family: var(--font-accent);
+            font-size: 2.3rem;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            margin: 0 0 16px 0;
+            line-height: 1.2;
+            color: var(--text-color);
+        }
+
+        .definition {
+            font-family: var(--font-main);
+            font-size: 0.88rem;
+            color: var(--muted-text);
+            margin-bottom: 50px;
+            line-height: 1.6;
+            border-left: 1px solid var(--pop-color);
+            padding-left: 16px;
+        }
+
+        .definition strong { color: var(--text-color); font-weight: 500; }
+
+        h2 {
+            font-family: var(--font-main);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--pop-color);
+            margin-top: 60px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        p { margin-bottom: 24px; font-size: 1.02rem; font-weight: 300; color: #dfded9; }
+
+        /* Logistics & Schedule Grid */
+        .market-list { margin-bottom: 40px; }
+        .market-item { margin-bottom: 24px; padding-left: 16px; border-left: 1px solid var(--border-color); }
+        .market-day { font-weight: 600; font-size: 0.95rem; color: var(--text-color); }
+        .market-location { font-size: 0.95rem; margin-top: 4px; line-height: 1.5; }
+        .market-location a { color: var(--muted-text); text-decoration: none; transition: color 0.2s ease; }
+        .market-location a:hover { color: var(--pop-color); text-decoration: underline; }
+
+        /* Menu Styles */
+        .menu-category-title {
+            font-family: var(--font-accent);
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin: 32px 0 16px 0;
+            font-weight: 400;
+        }
+        .menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding-left: 4px;
+            margin-bottom: 40px;
+        }
+        .menu-item {
+            border-bottom: 1px solid #262422;
+            padding-bottom: 12px;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+        .menu-item-desc {
+            color: var(--muted-text);
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        /* Care & Utility Systems */
+        .tips-container { margin-top: 20px; }
+        .tip-block { margin-bottom: 28px; }
+        .tip-title { font-family: var(--font-accent); font-style: italic; font-size: 1.05rem; color: var(--text-color); margin-bottom: 6px; }
+        .tip-desc { font-size: 0.95rem; color: var(--muted-text); font-weight: 300; }
+
+        /* Highlighted Contact Card Styles */
+        .contact-card-section {
+            margin-top: 70px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+        .contact-card {
+            padding: 32px 24px;
+            border: 1px solid var(--border-color);
+            background-color: #151413;
+        }
+        .contact-card-title {
+            font-family: var(--font-accent);
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 12px;
+        }
+        .contact-card-text {
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            color: var(--muted-text);
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        .contact-channels {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+        .channel-label {
+            color: var(--muted-text);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 2px;
+        }
+        .contact-channels a {
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .contact-channels a:hover {
+            text-decoration: underline;
+        }
+        .contact-social-row {
+            margin-top: 4px;
+            padding-top: 16px;
+            border-top: 1px solid #262422;
+        }
+
+        footer { margin-top: 90px; font-size: 0.7rem; color: var(--muted-text); letter-spacing: 1px; text-transform: uppercase; }
+
+        @media (max-width: 600px) {
+            .wrapper { padding: 50px 20px; }
+            h1 { font-size: 2rem; }
+            nav { flex-direction: column; align-items: flex-start; gap: 16px; }
+            nav .links { margin-top: 4px; }
+            nav .links a { margin-left: 0; margin-right: 20px; }
+            .hero-image-placeholder { height: 220px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Navigation Strip with Standalone Logo Image Block -->
+        <nav>
+            <div class="brand-container">
+                <img src="Lore Bakehouse-logos_transparent cropped.png" alt="Lore Bakehouse" class="logo">
+            </div>
+            <div class="links">
+                <a href="#provisions">Find Us</a>
+                <a href="#menu">Menu</a>
+                <a href="#philosophy">Philosophy</a>
+                <a href="#preservation">Storage Tips</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Landscape / Woodfire Workshop Hero Image Placeholder -->
+        <div class="hero-image-placeholder">
+		<img src="IMG_0863.HEIC" alt="Lore Bakehouse" class="image">
+        </div>
+
+        <!-- Identity Content Framework -->
+        <main>
+            <h1>Lore Bakehouse</h1>
+            <div class="definition">
+                <strong>lore (noun)</strong><br>
+                1: a particular body of knowledge or tradition<br>
+                2: something that is learned: traditional knowledge or belief
+            </div>
+
+            <p>Lore Bakehouse is a home-based bakery operating under Florida's cottage food laws, practicing the traditional knowledge of sourdough baking. We offer handmade artisan breads and baked goods using the highest quality ingredients. All the flour we use is sourced from a Southern mill and is 100% organic. We favor whole grains. Our dairy products are organic and/or grass-fed.</p>
+            <p>Our mission is to produce nourishing and delicious food and to support the growth of the North Florida local food community.</p>
+
+            <!-- Section: Find Us -->
+            <section id="provisions">
+                <h2>Weekly Markets ↓</h2>
+                <div class="market-list">
+                    <div class="market-item">
+                        <div class="market-day">Saturdays — 8:30 am to 12:00 pm</div>
+                        <div class="market-location">
+                            <a href="https://maps.google.com/?q=Haile+Farmers+Market+5213+SW+91st+Terrace+Gainesville+FL" target="_blank" rel="noopener">
+                                @ Haile Farmers Market<br>5213 SW 91st Terrace, Gainesville, FL
+                            </a>
+                        </div>
+                    </div>
+                    <div class="market-item">
+                        <div class="market-day">Mondays — 4:00 pm to 7:00 pm</div>
+                        <div class="market-location">
+                            <a href="https://maps.google.com/?q=Grove+Street+Farmers+Market+1001+NW+4th+St+Gainesville+FL+32601" target="_blank" rel="noopener">
+                                @ Grove Street Farmers Market<br>1001 NW 4th St, Gainesville, FL 32601
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Menu -->
+            <section id="menu">
+                <h2>Menu ↓</h2>
+                <div class="menu-container" style="margin-bottom: 50px;">
+
+                    <!-- Category: Breads -->
+                    <div class="menu-category-title">Breads</div>
+                    <div class="menu-list">
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <span style="color: var(--text-color);">Country Loaf</span>
+                            </div>
+                            <div class="menu-item-desc">A classic French-style rustic sourdough boule with an open crumb and crunchy crust. Also available as a pan loaf.</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <span style="color: var(--text-color);">Sesame</span>
+                            </div>
+                            <div class="menu-item-desc">Our country sourdough dough wrapped in black, white, and brown sesame seeds in a loaf pan.</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <span style="color: var(--text-color);">Multigrain</span>
+                            </div>
+                            <div class="menu-item-desc">A hearty loaf bread loaded with whole grains and sunflower, pumpkin, and flax seeds.</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <span style="color: var(--text-color);">Raisin + Pecan</span>
+                            </div>
+                            <div class="menu-item-desc">A whole grain loaf that’s nutty and a bit sweet due to the inclusion of pecans and flame raisins.</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <span style="color: var(--text-color);">Sprouted Spelt</span>
+                            </div>
+                            <div class="menu-item-desc">A bold 100% whole grain loaf made from sprouted spelt flour for maximum nutrition and digestibility.</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <span style="color: var(--text-color);">Whole Wheat</span>
+                            </div>
+                            <div class="menu-item-desc">A whole grain wheat loaf topped with wheat bran. Simple, hearty, delicious.</div>
+                        </div>
+
+                    </div>
+
+                    <!-- Category: Pastries & Specialties -->
+                    <div class="menu-category-title">Pastries &amp; Specialties</div>
+                    <div class="menu-list">
+
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <span style="color: var(--text-color);">Naturally Leavened Croissants</span>
+                                <span style="color: var(--pop-color); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Saturdays only</span>
+                            </div>
+                            <div class="menu-item-desc">Classic, chocolate, or almond — these handmade croissants are completely naturally leavened, bypassing commercial yeast entirely. Crafted over a meticulous multi-day process using the exact traditional Italian technique used to make panettone, they yield an exceptional layered melt and a deeply rich, light, complex flavor profile.</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <span style="color: var(--text-color);">Sourdough Cinnamon Roll</span>
+                                <span style="color: var(--pop-color); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Saturdays only</span>
+                            </div>
+                            <div class="menu-item-desc">Naturally-leavened brioche dough, cinnamon, real vanilla, and a touch of cardamom come together for this Nordic-inspired treat.</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <span style="color: var(--text-color);">Seasonal Galette</span>
+                            </div>
+                            <div class="menu-item-desc">Grass-fed, vat-cultured butter gives these open-faced pies featuring seasonal fruit an exceptional melt-in-your-mouth crust.</div>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </section>
+
+            <!-- Section: Philosophy -->
+            <section id="philosophy">
+                <h2>Why Sourdough? ↓</h2>
+                <p>While many think of sourdough as a flavor, it is actually a method for making bread and other baked goods rise. Most breads labeled "sourdough" in the United States are actually yeasted breads with lactic acid added for flavor. Real sourdough products made via the traditional method can be sweet, savory, mild, or tangy.</p>
+                <p>The story of sourdough is ancient. For thousands of years, people have been using the sourdough method to create healthy bread, a vital staple that has nourished civilizations. All of our leavened products start with this traditional method, harnessing the power of a living ecosystem of wild yeasts and bacteria to bring our products to life.</p>
+                <p>There are many benefits of baking with sourdough. Through sourdough's slow fermentation process, wild yeasts and bacteria feed on the starch found in the flour. This results in a bread with a lower glycemic index compared to yeasted breads. Additionally, the same process breaks down gluten and increases digestibility and the absorption of nutrients.</p>
+            </section>
+
+            <!-- Section: Preservation -->
+            <section id="preservation">
+                <h2>Storage & Care Tips ↓</h2>
+                <div class="tips-container">
+                    <div class="tip-block">
+                        <div class="tip-title">Day 1 to 3: The Pantry or Bread Box</div>
+                        <div class="tip-desc">Keep your bread cut-side down wrapped in a towel or in a paper bag. Store in the pantry, cupboard, or dedicated bread box to avoid drafts that dry out the bread prematurely. If using a plastic bag, keep it slightly open to prevent trapping moisture. Reheating revitalizes bread. </div>
+                    </div>
+                    <div class="tip-block">
+                        <div class="tip-title">Long Term: The Freezer</div>
+                        <div class="tip-desc"> Our breads and pastries freeze exceptionally well and the freezer is the best way to extend the life of your purchase.  Thaw frozen bread overnight and then store like fresh.  Or slice the loaf completely before freezing and drop slices directly from the freezer straight into the toaster or oven.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Contact & Preorders (Unified Card Layout) -->
+            <section class="contact-card-section" id="contact">
+                <div class="contact-card">
+                    <div class="contact-card-title">Preorders &amp; Inquiries</div>
+                    <p class="contact-card-text">
+                        As a small business with limited production capacity, we often sell out. Message us or text us in advance for guaranteed pickup at any of our markets.
+                    </p>
+                    
+                    <div class="contact-channels">
+                        <div>
+                            <span class="channel-label">Email</span>
+                            <a href="mailto:lorebakehouse@gmail.com" style="color: var(--pop-color);">lorebakehouse@gmail.com</a>
+                        </div>
+                        <div>
+                            <span class="channel-label">Text Only</span>
+                            <a href="tel:3523549433" style="color: var(--text-color);">(352) 354-9433</a>
+                        </div>
+                        <div class="contact-social-row">
+                            <a href="https://www.instagram.com/lorebakehouse" target="_blank" rel="noopener" style="color: var(--text-color); font-size: 0.9rem; font-family: var(--font-accent); font-style: italic;">
+                                <span style="color: var(--pop-color); font-style: normal; margin-right: 6px;">→</span> Follow us on Instagram for baking updates
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            &copy; 2026 Lore Bakehouse. Operating under Florida Cottage Food Law.
+        </footer>
+    </div>
+
+</body>
+</html>

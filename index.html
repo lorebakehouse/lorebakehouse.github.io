@@ -5,34 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lore Bakehouse</title>
     <style>
-       :root {
-  --bg-primary: #FDFBF7;       /* Soft linen background */
-  --text-primary: #2C2A29;     /* Deep charcoal text */
-  --color-clay: #A3826C;       /* Your contact card / warm earth */
-  --color-accent-blue: #3E5668;/* Heritage slate blue */
-  --neutral-border: #EAE3DB;   /* Muted divider lines */
-}
+        :root {
+            /* --- Color Palette --- */
+            --bg-primary: #FDFBF7;       /* Soft linen background */
+            --bg-surface: #FFFFFF;       /* Pure white for image placeholders */
+            --text-primary: #2C2A29;     /* Deep charcoal text */
+            --text-muted: #6C6A68;       /* Softer grey/brown for descriptions */
+            --color-clay: #A3826C;       /* Contact card / warm earth */
+            --color-accent-blue: #2E51A2;/* Mediterranean Indigo - Vibrant accent */
+            --neutral-border: #EAE3DB;   /* Muted divider lines */
 
-/* Example Usage */
-body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-}
+            /* --- Typography --- */
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --font-accent: "Georgia", "Times New Roman", serif;
+        }
 
-.contact-card {
-  background-color: var(--color-clay);
-  color: var(--bg-primary); /* Keeps text legible over the darker clay */
-}
-
-.btn-accent {
-  background-color: var(--color-accent-blue);
-  color: var(--bg-primary);
-}
         * { box-sizing: border-box; }
+        
         body {
             font-family: var(--font-main);
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.7;
             margin: 0;
             padding: 0;
@@ -46,12 +39,12 @@ body {
             padding: 60px 24px;
         }
 
-        /* Fixed Navigation Layout */
+        /* --- Fixed Navigation Layout --- */
         nav {
             display: flex;
-            justify-content: space-between; /* Pushes logo left, links right */
-            align-items: center;            /* Perfectly levels them vertically */
-            border-bottom: 1px solid var(--border-color);
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--neutral-border);
             padding-bottom: 20px;
             margin-bottom: 35px;
             font-size: 0.82rem;
@@ -66,49 +59,51 @@ body {
             flex-shrink: 0;
         }
 
-      nav .logo {
+        nav .logo {
             height: 48px;
             width: auto;
             display: block;
-            /* Inverts light text to dark; adjusts contrast to keep lines sharp */
             filter: invert(0.9) brightness(0.4) contrast(1.2); 
         }
         
         nav .links {
             display: flex;
-            gap: 15px;                    /* Clean spacing between menu items */
-            flex-wrap: wrap;              /* Safely wraps if screen gets tight */
+            gap: 15px;
+            flex-wrap: wrap;
             justify-content: flex-end;
         }
 
         nav .links a { 
-            color: var(--pop-color); 
+            color: var(--color-accent-blue); 
             text-decoration: none; 
             white-space: nowrap;
             font-weight: 500;
             transition: opacity 0.2s ease; 
         }
-        nav .links a:hover { opacity: 0.7; }
+        
+        nav .links a:hover { 
+            opacity: 0.7; 
+        }
 
-        /* Cover Photo Framework */
+        /* --- Cover Photo Framework --- */
         .hero-image-placeholder {
             width: 100%;
-            height: 360px;                 /* Restores the fixed window height */
-            background-color: var(--surface-color);
-            border: 1px solid var(--border-color);
+            height: 360px;
+            background-color: var(--bg-surface);
+            border: 1px solid var(--neutral-border);
             margin-bottom: 60px;
-            overflow: hidden;              /* Cleanly cuts off anything spilling out */
+            overflow: hidden;
         }
 
         .hero-image-placeholder img {
             width: 100%;
-            height: 100%;                  /* Forces image to fill the 360px height slot */
-            display: block;                
-            object-fit: cover;             /* Auto-crops center without distorting ratios */
-            object-position: center;       /* Centers the focus of the photo */
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
         }
 
-        /* Typography & Tone */
+        /* --- Typography & Tone --- */
         h1 {
             font-family: var(--font-accent);
             font-size: 2.3rem;
@@ -116,20 +111,23 @@ body {
             letter-spacing: -0.5px;
             margin: 0 0 16px 0;
             line-height: 1.2;
-            color: var(--text-color);
+            color: var(--text-primary);
         }
 
         .definition {
             font-family: var(--font-main);
             font-size: 0.88rem;
-            color: var(--muted-text);
+            color: var(--text-muted);
             margin-bottom: 50px;
             line-height: 1.6;
-            border-left: 2px solid var(--pop-color);
+            border-left: 2px solid var(--color-accent-blue);
             padding-left: 16px;
         }
 
-        .definition strong { color: var(--text-color); font-weight: 500; }
+        .definition strong { 
+            color: var(--text-primary); 
+            font-weight: 500; 
+        }
 
         h2 {
             font-family: var(--font-main);
@@ -137,32 +135,38 @@ body {
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: var(--pop-color);
+            color: var(--color-accent-blue);
             margin-top: 60px;
             margin-bottom: 24px;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--neutral-border);
             padding-bottom: 8px;
         }
 
-        p { margin-bottom: 24px; font-size: 1.02rem; font-weight: 400; color: var(--text-color); }
+        p { 
+            margin-bottom: 24px; 
+            font-size: 1.02rem; 
+            font-weight: 400; 
+            color: var(--text-primary); 
+        }
 
-        /* Logistics & Schedule Grid */
+        /* --- Logistics & Schedule Grid --- */
         .market-list { margin-bottom: 40px; }
-        .market-item { margin-bottom: 24px; padding-left: 16px; border-left: 1px solid var(--border-color); }
-        .market-day { font-weight: 600; font-size: 0.95rem; color: var(--text-color); }
+        .market-item { margin-bottom: 24px; padding-left: 16px; border-left: 1px solid var(--neutral-border); }
+        .market-day { font-weight: 600; font-size: 0.95rem; color: var(--text-primary); }
         .market-location { font-size: 0.95rem; margin-top: 4px; line-height: 1.5; }
-        .market-location a { color: var(--muted-text); text-decoration: none; transition: color 0.2s ease; }
-        .market-location a:hover { color: var(--pop-color); text-decoration: underline; }
+        .market-location a { color: var(--text-muted); text-decoration: none; transition: color 0.2s ease; }
+        .market-location a:hover { color: var(--color-accent-blue); text-decoration: underline; }
 
-        /* Menu Styles */
+        /* --- Menu Styles --- */
         .menu-category-title {
             font-family: var(--font-accent);
             font-style: italic;
             font-size: 1.2rem;
-            color: var(--text-color);
+            color: var(--text-primary);
             margin: 32px 0 16px 0;
             font-weight: 400;
         }
+        
         .menu-list {
             display: flex;
             flex-direction: column;
@@ -170,14 +174,17 @@ body {
             padding-left: 4px;
             margin-bottom: 40px;
         }
+        
         .menu-item {
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--neutral-border);
             padding-bottom: 12px;
         }
+        
         .menu-item:last-child {
             border-bottom: none;
             padding-bottom: 0;
         }
+        
         .menu-item-header {
             display: flex;
             justify-content: space-between;
@@ -185,71 +192,93 @@ body {
             font-weight: 500;
             margin-bottom: 2px;
         }
+        
         .menu-item-desc {
-            color: var(--muted-text);
+            color: var(--text-muted);
             font-size: 0.9rem;
             font-weight: 400;
         }
 
-        /* Care & Utility Systems */
+        /* --- Care & Utility Systems --- */
         .tips-container { margin-top: 20px; }
         .tip-block { margin-bottom: 28px; }
-        .tip-title { font-family: var(--font-accent); font-style: italic; font-size: 1.05rem; color: var(--text-color); margin-bottom: 6px; }
-        .tip-desc { font-size: 0.95rem; color: var(--muted-text); }
+        .tip-title { font-family: var(--font-accent); font-style: italic; font-size: 1.05rem; color: var(--text-primary); margin-bottom: 6px; }
+        .tip-desc { font-size: 0.95rem; color: var(--text-muted); }
 
-        /* Highlighted Contact Card Styles */
+        /* --- Highlighted Contact Card Styles --- */
         .contact-card-section {
             margin-top: 70px;
             padding-top: 40px;
-            border-top: 1px solid var(--border-color);
+            border-top: 1px solid var(--neutral-border);
         }
+        
         .contact-card {
             padding: 32px 24px;
-            border: 1px solid var(--border-color);
-            background-color: var(--surface-color);
+            border: 1px solid var(--color-clay);
+            background-color: var(--color-clay);
+            color: var(--bg-primary); /* Light text over dark clay background */
         }
+        
         .contact-card-title {
             font-family: var(--font-accent);
             font-style: italic;
             font-size: 1.2rem;
-            color: var(--text-color);
+            color: var(--bg-primary);
             margin-bottom: 12px;
         }
+        
         .contact-card-text {
             font-size: 0.95rem;
             margin-bottom: 24px;
-            color: var(--muted-text);
+            color: var(--bg-primary);
+            opacity: 0.9;
             line-height: 1.6;
         }
+        
         .contact-channels {
             display: flex;
             flex-direction: column;
             gap: 12px;
             font-size: 0.95rem;
         }
+        
         .channel-label {
-            color: var(--muted-text);
+            color: var(--bg-primary);
+            opacity: 0.7;
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             display: block;
             margin-bottom: 2px;
         }
+        
         .contact-channels a {
             text-decoration: none;
-            transition: color 0.2s ease;
+            transition: opacity 0.2s ease;
+            color: var(--bg-primary);
+            font-weight: 500;
         }
+        
         .contact-channels a:hover {
             text-decoration: underline;
+            opacity: 0.8;
         }
+        
         .contact-social-row {
             margin-top: 4px;
             padding-top: 16px;
-            border-top: 1px solid var(--border-color);
+            border-top: 1px solid rgba(253, 251, 247, 0.2); /* Semi-transparent border for clay background */
         }
 
-        footer { margin-top: 90px; font-size: 0.7rem; color: var(--muted-text); letter-spacing: 1px; text-transform: uppercase; }
+        footer { 
+            margin-top: 90px; 
+            font-size: 0.7rem; 
+            color: var(--text-muted); 
+            letter-spacing: 1px; 
+            text-transform: uppercase; 
+        }
 
+        /* --- Mobile Responsiveness --- */
         @media (max-width: 600px) {
             .wrapper { padding: 40px 20px; }
             h1 { font-size: 2rem; }
@@ -283,7 +312,7 @@ body {
                 <a href="#contact">CONTACT</a>
             </div>
         </nav>
-		
+        
         <div class="hero-image-placeholder">
             <img src="IMG_0958 (1).jpeg" alt="Lore Bakehouse Cover" class="image">
         </div>
@@ -330,42 +359,42 @@ body {
                         
                         <div class="menu-item">
                             <div class="menu-item-header">
-                                <span style="color: var(--text-color);">Country Loaf</span>
+                                <span style="color: var(--text-primary);">Country Loaf</span>
                             </div>
                             <div class="menu-item-desc">A classic French-style rustic sourdough boule with an open crumb and crunchy crust. Also available as a pan loaf.</div>
                         </div>
 
                         <div class="menu-item">
                             <div class="menu-item-header">
-                                <span style="color: var(--text-color);">Sesame</span>
+                                <span style="color: var(--text-primary);">Sesame</span>
                             </div>
                             <div class="menu-item-desc">Our country sourdough dough wrapped in black, white, and brown sesame seeds in a loaf pan.</div>
                         </div>
 
                         <div class="menu-item">
                             <div class="menu-item-header">
-                                <span style="color: var(--text-color);">Multigrain</span>
+                                <span style="color: var(--text-primary);">Multigrain</span>
                             </div>
                             <div class="menu-item-desc">A hearty loaf bread loaded with whole grains and sunflower, pumpkin, and flax seeds.</div>
                         </div>
 
                         <div class="menu-item">
                             <div class="menu-item-header">
-                                <span style="color: var(--text-color);">Raisin + Pecan</span>
+                                <span style="color: var(--text-primary);">Raisin + Pecan</span>
                             </div>
                             <div class="menu-item-desc">A whole grain loaf that’s nutty and a bit sweet due to the inclusion of pecans and flame raisins.</div>
                         </div>
 
                         <div class="menu-item">
                             <div class="menu-item-header">
-                                <span style="color: var(--text-color);">Sprouted Spelt</span>
+                                <span style="color: var(--text-primary);">Sprouted Spelt</span>
                             </div>
                             <div class="menu-item-desc">A bold 100% whole grain loaf made from sprouted spelt flour for maximum nutrition and digestibility.</div>
                         </div>
 
                         <div class="menu-item">
                             <div class="menu-item-header">
-                                <span style="color: var(--text-color);">Whole Wheat</span>
+                                <span style="color: var(--text-primary);">Whole Wheat</span>
                             </div>
                             <div class="menu-item-desc">A whole grain wheat loaf topped with wheat bran. Simple, hearty, delicious.</div>
                         </div>
@@ -376,27 +405,27 @@ body {
                     <div class="menu-list">
 
                       <div class="menu-item">
-    <div class="menu-item-header">
-        <span style="color: var(--text-color);">Naturally Leavened Croissants</span>
-        <span style="color: var(--pop-color); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Saturdays only</span>
-    </div>
-    <div class="menu-item-desc">
-        <em>Classic, Chocolate, or Almond</em><br>
-        Bypassing commercial yeast entirely, our croissants are 100% naturally leavened over a meticulous multi-day process. We use the demanding, traditional Italian technique typically reserved for panettone, cultivating a wild starter that rewards patience with an incredibly light, complex flavor. The result is a beautifully layered pastry with an exceptional, melt-in-your-mouth interior and a rich depth you won’t find anywhere else.
-    </div>
-</div>
+                        <div class="menu-item-header">
+                            <span style="color: var(--text-primary);">Naturally Leavened Croissants</span>
+                            <span style="color: var(--color-accent-blue); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Saturdays only</span>
+                        </div>
+                        <div class="menu-item-desc">
+                            <em>Classic, Chocolate, or Almond</em><br>
+                            Bypassing commercial yeast entirely, our croissants are 100% naturally leavened over a meticulous multi-day process. We use the demanding, traditional Italian technique typically reserved for panettone, cultivating a wild starter that rewards patience with an incredibly light, complex flavor. The result is a beautifully layered pastry with an exceptional, melt-in-your-mouth interior and a rich depth you won’t find anywhere else.
+                        </div>
+                      </div>
 
                         <div class="menu-item">
                             <div class="menu-item-header">
-                                <span style="color: var(--text-color);">Sourdough Cinnamon Roll</span>
-                                <span style="color: var(--pop-color); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Saturdays only</span>
+                                <span style="color: var(--text-primary);">Sourdough Cinnamon Roll</span>
+                                <span style="color: var(--color-accent-blue); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Saturdays only</span>
                             </div>
                             <div class="menu-item-desc">Naturally-leavened brioche dough, cinnamon, real vanilla, and a touch of cardamom come together for this Nordic-inspired treat.</div>
                         </div>
 
                         <div class="menu-item">
                             <div class="menu-item-header">
-                                <span style="color: var(--text-color);">Seasonal Galette</span>
+                                <span style="color: var(--text-primary);">Seasonal Galette</span>
                             </div>
                             <div class="menu-item-desc">Grass-fed, vat-cultured butter gives these open-faced pies featuring seasonal fruit an exceptional melt-in-your-mouth crust.</div>
                         </div>
@@ -437,15 +466,15 @@ body {
                     <div class="contact-channels">
                         <div>
                             <span class="channel-label">Email</span>
-                            <a href="mailto:lorebakehouse@gmail.com" style="color: var(--pop-color);">lorebakehouse@gmail.com</a>
+                            <a href="mailto:lorebakehouse@gmail.com">lorebakehouse@gmail.com</a>
                         </div>
                         <div>
                             <span class="channel-label">Text Only</span>
-                            <a href="tel:3523549433" style="color: var(--pop-color); font-weight: 500;">(352) 354-9433</a>
+                            <a href="tel:3523549433">(352) 354-9433</a>
                         </div>
                         <div class="contact-social-row">
-                            <a href="https://www.instagram.com/lorebakehouse" target="_blank" rel="noopener" style="color: var(--text-color); font-size: 0.9rem; font-family: var(--font-accent); font-style: italic;">
-                                <span style="color: var(--pop-color); font-style: normal; margin-right: 6px;">→</span> Follow us on Instagram for baking updates
+                            <a href="https://www.instagram.com/lorebakehouse" target="_blank" rel="noopener" style="font-size: 0.9rem; font-family: var(--font-accent); font-style: italic;">
+                                <span style="font-style: normal; margin-right: 6px;">→</span> Follow us on Instagram for baking updates
                             </a>
                         </div>
                     </div>

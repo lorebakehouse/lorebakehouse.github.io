@@ -5,17 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lore Bakehouse</title>
     <style>
-        /* Flour & Linen Palette Implementation */
-        :root {
-      		--bg-primary: #FDFBF7;       /* Soft linen background */
-  			--text-primary: #2C2A29;     /* Deep charcoal text */
-			--color-clay: #A3826C;       /* Your contact card / warm earth */
-  			--color-accent-blue: #3E5668;/* Heritage slate blue */
-  			--neutral-border: #EAE3DB;   /* Muted divider lines */
-            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            --font-accent: "Georgia", "Times New Roman", serif;
-        }
+       :root {
+  --bg-primary: #FDFBF7;       /* Soft linen background */
+  --text-primary: #2C2A29;     /* Deep charcoal text */
+  --color-clay: #A3826C;       /* Your contact card / warm earth */
+  --color-accent-blue: #3E5668;/* Heritage slate blue */
+  --neutral-border: #EAE3DB;   /* Muted divider lines */
+}
 
+/* Example Usage */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.contact-card {
+  background-color: var(--color-clay);
+  color: var(--bg-primary); /* Keeps text legible over the darker clay */
+}
+
+.btn-accent {
+  background-color: var(--color-accent-blue);
+  color: var(--bg-primary);
+}
         * { box-sizing: border-box; }
         body {
             font-family: var(--font-main);

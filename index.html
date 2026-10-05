@@ -187,12 +187,19 @@
         }
 
         /* --- Menu Styles --- */
+        .menu-intro {
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
         .menu-category-title {
             font-family: var(--font-accent);
             font-style: italic;
             font-size: 1.25rem;
             color: var(--text-primary);
-            margin: 32px 0 16px 0;
+            margin: 36px 0 16px 0;
             font-weight: 400;
         }
         
@@ -230,12 +237,46 @@
             line-height: 1.55;
         }
 
-        .badge-schedule {
-            color: var(--color-accent-blue);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        /* --- Schedule List Styles --- */
+        .specials-schedule {
+            margin-top: 20px;
+            background-color: var(--bg-surface);
+            border: 1px solid var(--neutral-border);
+            padding: 24px;
+        }
+
+        .schedule-market-title {
             font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+
+        .schedule-market-title:first-child {
+            margin-top: 0;
+        }
+
+        .schedule-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0 0 20px 0;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        .schedule-list:last-child {
+            margin-bottom: 0;
+        }
+
+        .schedule-list li {
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+
+        .schedule-list li strong {
+            color: var(--text-primary);
+            font-weight: 500;
         }
 
         /* --- Care & Utility Systems --- */
@@ -346,6 +387,9 @@
                 align-items: flex-start;
                 gap: 2px;
             }
+            .specials-schedule {
+                padding: 18px;
+            }
         }
     </style>
 </head>
@@ -413,87 +457,95 @@
 
             <section id="menu">
                 <h2>Menu ↓</h2>
-                <div class="menu-container" style="margin-bottom: 40px;">
+                
+                <p class="menu-intro">
+                    Our standard weekly menu features Country, Sesame, Multigrain, and Raisin Pecan sourdough loaves, alongside seasonal fruit galettes. The remainder of our bread and pastry selections rotate monthly to bring in seasonal ingredients and special items.
+                </p>
 
-                    <div class="menu-category-title">Breads</div>
-                    <div class="menu-list">
-                        
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <span>Country Loaf</span>
-                            </div>
-                            <div class="menu-item-desc">A classic French-style rustic sourdough boule with an open crumb and crunchy crust. Also available as a pan loaf.</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <span>Sesame</span>
-                            </div>
-                            <div class="menu-item-desc">Our country sourdough dough wrapped in black, white, and brown sesame seeds in a loaf pan.</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <span>Multigrain</span>
-                            </div>
-                            <div class="menu-item-desc">A hearty loaf bread loaded with whole grains and sunflower, pumpkin, and flax seeds.</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <span>Raisin + Pecan</span>
-                            </div>
-                            <div class="menu-item-desc">A whole grain loaf that’s nutty and a bit sweet due to the inclusion of pecans and flame raisins.</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <span>Sprouted Spelt</span>
-                            </div>
-                            <div class="menu-item-desc">A bold 100% whole grain loaf made from sprouted spelt flour for maximum nutrition and digestibility.</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <span>Whole Wheat</span>
-                            </div>
-                            <div class="menu-item-desc">A whole grain wheat loaf topped with wheat bran. Simple, hearty, delicious.</div>
-                        </div>
-
-                    </div>
-
-                    <div class="menu-category-title">Pastries & Specialties</div>
-                    <div class="menu-list">
-
-                      <div class="menu-item">
+                <div class="menu-category-title">October Specials</div>
+                <div class="menu-list">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-header">
-                            <span>Naturally Leavened Croissants</span>
-                            <span class="badge-schedule">Saturdays only</span>
+                            <span>Fall Persimmon Buns</span>
                         </div>
                         <div class="menu-item-desc">
-                            <em>Classic, Chocolate, or Almond</em><br>
-                            Bypassing commercial yeast entirely, our croissants are 100% naturally leavened over a meticulous multi-day process. We use the demanding, traditional Italian technique typically reserved for panettone, cultivating a wild starter that rewards patience with an incredibly light, complex flavor. The result is a beautifully layered pastry with an exceptional, melt-in-your-mouth interior and a rich depth you won’t find anywhere else.
+                            Made with sourdough brioche dough, filled with lightly spiced persimmon from Siembra Farms, and topped with streusel.
                         </div>
-                      </div>
-
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <span>Sourdough Cinnamon Roll</span>
-                                <span class="badge-schedule">Saturdays only</span>
-                            </div>
-                            <div class="menu-item-desc">Naturally-leavened brioche dough, cinnamon, real vanilla, and a touch of cardamom come together for this Nordic-inspired treat.</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <div class="menu-item-header">
-                                <span>Seasonal Galette</span>
-                            </div>
-                            <div class="menu-item-desc">Grass-fed, vat-cultured butter gives these open-faced pies featuring seasonal fruit an exceptional melt-in-your-mouth crust.</div>
-                        </div>
-
                     </div>
-                    
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span>Rosemary & Olive Oil Sourdough</span>
+                        </div>
+                        <div class="menu-item-desc">
+                            Country sourdough dough with fresh rosemary from my garden and local olive oil from Florida Olive Farm. Fragrant and savory, rosemary has been a frequently requested flavor that I hope many will enjoy.
+                        </div>
+                    </div>
+
                 </div>
+
+                <div class="menu-category-title">October Specials Schedule</div>
+                
+                <div class="specials-schedule">
+                    <div class="schedule-market-title">📍 Haile Farmers Market (Saturdays)</div>
+                    <ul class="schedule-list">
+                        <li><strong>10/3:</strong> Spelt Sourdough & Croissants (Plain, Almond, Chocolate)</li>
+                        <li><strong>10/10:</strong> Rosemary and Olive Oil Sourdough & Cinnamon Rolls, Fall Persimmon Buns</li>
+                        <li><strong>10/17:</strong> Spelt Sourdough & Croissants (Plain, Almond, Chocolate)</li>
+                        <li><strong>10/24:</strong> Rosemary and Olive Oil Sourdough & Cinnamon Rolls, Fall Persimmon Buns</li>
+                        <li><strong>10/31:</strong> Spelt Sourdough & Croissants (Plain, Almond, Chocolate)</li>
+                    </ul>
+
+                    <div class="schedule-market-title">📍 Grove Street Farmers Market (Mondays)</div>
+                    <ul class="schedule-list">
+                        <li><strong>10/5:</strong> Spelt Sourdough</li>
+                        <li><strong>10/12:</strong> Rosemary and Olive Oil Sourdough</li>
+                        <li><strong>10/19:</strong> Spelt Sourdough</li>
+                        <li><strong>10/26:</strong> Rosemary and Olive Oil Sourdough</li>
+                    </ul>
+                </div>
+
+                <div class="menu-category-title">Standard Offerings</div>
+                <div class="menu-list">
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span>Country Loaf</span>
+                        </div>
+                        <div class="menu-item-desc">A classic French-style rustic sourdough boule with an open crumb and crunchy crust. Also available as a pan loaf.</div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span>Sesame</span>
+                        </div>
+                        <div class="menu-item-desc">Our country sourdough dough wrapped in black, white, and brown sesame seeds in a loaf pan.</div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span>Multigrain</span>
+                        </div>
+                        <div class="menu-item-desc">A hearty loaf bread loaded with whole grains and sunflower, pumpkin, and flax seeds.</div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span>Raisin + Pecan</span>
+                        </div>
+                        <div class="menu-item-desc">A whole grain loaf that’s nutty and a bit sweet due to the inclusion of pecans and flame raisins.</div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span>Seasonal Galette</span>
+                        </div>
+                        <div class="menu-item-desc">Grass-fed, vat-cultured butter gives these open-faced pies featuring seasonal fruit an exceptional melt-in-your-mouth crust.</div>
+                    </div>
+
+                </div>
+
             </section>
 
             <section id="philosophy">

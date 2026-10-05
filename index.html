@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lore Bakehouse - Handcrafted organic sourdough breads and pastries in North Florida.">
     <title>Lore Bakehouse</title>
     <style>
         :root {
@@ -12,7 +13,7 @@
             --text-primary: #2C2A29;     /* Deep charcoal text */
             --text-muted: #6C6A68;       /* Softer grey/brown for descriptions */
             --color-clay: #A3826C;       /* Contact card / warm earth */
-            --color-accent-blue: #2E51A2;/* Mediterranean Indigo - Vibrant accent */
+            --color-accent-blue: #2E51A2;/* Mediterranean Indigo */
             --neutral-border: #EAE3DB;   /* Muted divider lines */
 
             /* --- Typography --- */
@@ -39,7 +40,7 @@
             padding: 60px 24px;
         }
 
-        /* --- Fixed Navigation Layout --- */
+        /* --- Navigation Layout --- */
         nav {
             display: flex;
             justify-content: space-between;
@@ -68,7 +69,7 @@
         
         nav .links {
             display: flex;
-            gap: 15px;
+            gap: 18px;
             flex-wrap: wrap;
             justify-content: flex-end;
         }
@@ -85,13 +86,13 @@
             opacity: 0.7; 
         }
 
-        /* --- Cover Photo Framework --- */
+        /* --- Hero Image --- */
         .hero-image-placeholder {
             width: 100%;
-            height: 360px;
+            aspect-ratio: 16 / 9;
             background-color: var(--bg-surface);
             border: 1px solid var(--neutral-border);
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             overflow: hidden;
         }
 
@@ -118,7 +119,7 @@
             font-family: var(--font-main);
             font-size: 0.88rem;
             color: var(--text-muted);
-            margin-bottom: 50px;
+            margin-bottom: 45px;
             line-height: 1.6;
             border-left: 2px solid var(--color-accent-blue);
             padding-left: 16px;
@@ -136,14 +137,14 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             color: var(--color-accent-blue);
-            margin-top: 60px;
+            margin-top: 55px;
             margin-bottom: 24px;
             border-bottom: 1px solid var(--neutral-border);
             padding-bottom: 8px;
         }
 
         p { 
-            margin-bottom: 24px; 
+            margin-bottom: 20px; 
             font-size: 1.02rem; 
             font-weight: 400; 
             color: var(--text-primary); 
@@ -151,17 +152,45 @@
 
         /* --- Logistics & Schedule Grid --- */
         .market-list { margin-bottom: 40px; }
-        .market-item { margin-bottom: 24px; padding-left: 16px; border-left: 1px solid var(--neutral-border); }
-        .market-day { font-weight: 600; font-size: 0.95rem; color: var(--text-primary); }
-        .market-location { font-size: 0.95rem; margin-top: 4px; line-height: 1.5; }
-        .market-location a { color: var(--text-muted); text-decoration: none; transition: color 0.2s ease; }
-        .market-location a:hover { color: var(--color-accent-blue); text-decoration: underline; }
+        .market-item { 
+            margin-bottom: 20px; 
+            padding-left: 16px; 
+            border-left: 1px solid var(--neutral-border); 
+        }
+        .market-day { 
+            font-weight: 600; 
+            font-size: 0.95rem; 
+            color: var(--text-primary); 
+        }
+        .market-location { 
+            font-size: 0.95rem; 
+            margin-top: 4px; 
+            line-height: 1.5; 
+        }
+        .market-location a { 
+            color: var(--text-muted); 
+            text-decoration: none; 
+            transition: color 0.2s ease; 
+        }
+        .market-location a:hover { 
+            color: var(--color-accent-blue); 
+            text-decoration: underline; 
+        }
+
+        /* --- Blog Section --- */
+        .blog-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
 
         /* --- Menu Styles --- */
         .menu-category-title {
             font-family: var(--font-accent);
             font-style: italic;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--text-primary);
             margin: 32px 0 16px 0;
             font-weight: 400;
@@ -170,14 +199,14 @@
         .menu-list {
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            padding-left: 4px;
+            gap: 18px;
+            padding-left: 0;
             margin-bottom: 40px;
         }
         
         .menu-item {
             border-bottom: 1px solid var(--neutral-border);
-            padding-bottom: 12px;
+            padding-bottom: 14px;
         }
         
         .menu-item:last-child {
@@ -188,41 +217,61 @@
         .menu-item-header {
             display: flex;
             justify-content: space-between;
+            align-items: baseline;
             font-size: 1rem;
             font-weight: 500;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
         
         .menu-item-desc {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             font-weight: 400;
+            line-height: 1.55;
+        }
+
+        .badge-schedule {
+            color: var(--color-accent-blue);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
         }
 
         /* --- Care & Utility Systems --- */
         .tips-container { margin-top: 20px; }
-        .tip-block { margin-bottom: 28px; }
-        .tip-title { font-family: var(--font-accent); font-style: italic; font-size: 1.05rem; color: var(--text-primary); margin-bottom: 6px; }
-        .tip-desc { font-size: 0.95rem; color: var(--text-muted); }
+        .tip-block { margin-bottom: 24px; }
+        .tip-title { 
+            font-family: var(--font-accent); 
+            font-style: italic; 
+            font-size: 1.1rem; 
+            color: var(--text-primary); 
+            margin-bottom: 6px; 
+        }
+        .tip-desc { 
+            font-size: 0.95rem; 
+            color: var(--text-muted); 
+            line-height: 1.6;
+        }
 
         /* --- Highlighted Contact Card Styles --- */
         .contact-card-section {
-            margin-top: 70px;
-            padding-top: 40px;
+            margin-top: 60px;
+            padding-top: 30px;
             border-top: 1px solid var(--neutral-border);
         }
         
         .contact-card {
-            padding: 32px 24px;
+            padding: 32px 28px;
             border: 1px solid var(--color-clay);
             background-color: var(--color-clay);
-            color: var(--bg-primary); /* Light text over dark clay background */
+            color: var(--bg-primary);
         }
         
         .contact-card-title {
             font-family: var(--font-accent);
             font-style: italic;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--bg-primary);
             margin-bottom: 12px;
         }
@@ -231,21 +280,21 @@
             font-size: 0.95rem;
             margin-bottom: 24px;
             color: var(--bg-primary);
-            opacity: 0.9;
+            opacity: 0.92;
             line-height: 1.6;
         }
         
         .contact-channels {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
             font-size: 0.95rem;
         }
         
         .channel-label {
             color: var(--bg-primary);
-            opacity: 0.7;
-            font-size: 0.8rem;
+            opacity: 0.75;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             display: block;
@@ -261,18 +310,18 @@
         
         .contact-channels a:hover {
             text-decoration: underline;
-            opacity: 0.8;
+            opacity: 0.85;
         }
         
         .contact-social-row {
-            margin-top: 4px;
+            margin-top: 6px;
             padding-top: 16px;
-            border-top: 1px solid rgba(253, 251, 247, 0.2); /* Semi-transparent border for clay background */
+            border-top: 1px solid rgba(253, 251, 247, 0.25);
         }
 
         footer { 
-            margin-top: 90px; 
-            font-size: 0.7rem; 
+            margin-top: 80px; 
+            font-size: 0.72rem; 
             color: var(--text-muted); 
             letter-spacing: 1px; 
             text-transform: uppercase; 
@@ -280,19 +329,23 @@
 
         /* --- Mobile Responsiveness --- */
         @media (max-width: 600px) {
-            .wrapper { padding: 40px 20px; }
-            h1 { font-size: 2rem; }
+            .wrapper { padding: 36px 18px; }
+            h1 { font-size: 1.9rem; }
             nav { 
                 flex-direction: column; 
                 align-items: center; 
-                gap: 16px; 
+                gap: 14px; 
             }
             nav .links { 
-                margin-top: 4px;
-                gap: 14px;
+                margin-top: 2px;
+                gap: 12px;
                 justify-content: center;
             }
-            .hero-image-placeholder { height: 240px; }
+            .menu-item-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 2px;
+            }
         }
     </style>
 </head>
@@ -302,10 +355,11 @@
         
         <nav>
             <div class="brand-container">
-                <img src="Lore Bakehouse-logos_transparent cropped.png" alt="Lore Bakehouse" class="logo">
+                <img src="Lore Bakehouse-logos_transparent cropped.png" alt="Lore Bakehouse Logo" class="logo">
             </div>
             <div class="links">
                 <a href="#provisions">FIND US</a>
+                <a href="#journal">JOURNAL</a>
                 <a href="#menu">MENU</a>
                 <a href="#philosophy">PHILOSOPHY</a>
                 <a href="#preservation">STORAGE</a>
@@ -314,7 +368,7 @@
         </nav>
         
         <div class="hero-image-placeholder">
-            <img src="IMG_0958 (1).jpeg" alt="Lore Bakehouse Cover" class="image">
+            <img src="IMG_0958 (1).jpeg" alt="Freshly baked sourdough breads on display" class="image">
         </div>
 
         <main>
@@ -334,7 +388,7 @@
                     <div class="market-item">
                         <div class="market-day">Saturdays — 8:30 am to 12:00 pm</div>
                         <div class="market-location">
-                            <a href="https://maps.google.com/?q=Haile+Farmers+Market+5213+SW+91st+Terrace+Gainesville+FL" target="_blank" rel="noopener">
+                            <a href="https://maps.google.com/?q=Haile+Farmers+Market+5213+SW+91st+Terrace+Gainesville+FL" target="_blank" rel="noopener" aria-label="Haile Farmers Market Google Maps Location">
                                 @ Haile Farmers Market<br>5213 SW 91st Terrace, Gainesville, FL
                             </a>
                         </div>
@@ -342,7 +396,7 @@
                     <div class="market-item">
                         <div class="market-day">Mondays — 4:00 pm to 7:00 pm</div>
                         <div class="market-location">
-                            <a href="https://maps.google.com/?q=Grove+Street+Farmers+Market+1001+NW+4th+St+Gainesville+FL+32601" target="_blank" rel="noopener">
+                            <a href="https://maps.google.com/?q=Grove+Street+Farmers+Market+1001+NW+4th+St+Gainesville+FL+32601" target="_blank" rel="noopener" aria-label="Grove Street Farmers Market Google Maps Location">
                                 @ Grove Street Farmers Market<br>1001 NW 4th St, Gainesville, FL 32601
                             </a>
                         </div>
@@ -350,51 +404,58 @@
                 </div>
             </section>
 
+            <section id="journal">
+                <h2>Monthly Update ↓</h2>
+                <div class="blog-date">October 2026</div>
+                <p>It is my strong belief that local and seasonal food is the future. Eating in sync with time and space benefits the health of our bodies, our communities, our ecosystems. As the weather cools and our growing season accelerates, I am thinking about how I can contribute to a future of local food that is high quality, nourishing, flavorful, and diverse. While baking-quality Florida-grown grains is a challenge I am still trying to solve, I strive to incorporate more local and seasonal items into my menu.</p>
+                <p>Part of it is learning to appreciate what grows well here instead of always chasing flavors of my youth. For instance, I grew up in a much more temperate climate, and I only tasted persimmons for the first time when I was in college. Only recently have I begun to look forward to their beautiful orange color and distinct sweetness each fall. Still, I struggled to find ways to bake with them that make their flavor shine. In the end, I settled on a spiced brioche bun with persimmon filling. I hope it’s an approachable way for others to love this wonderful local fruit too.</p>
+            </section>
+
             <section id="menu">
                 <h2>Menu ↓</h2>
-                <div class="menu-container" style="margin-bottom: 50px;">
+                <div class="menu-container" style="margin-bottom: 40px;">
 
                     <div class="menu-category-title">Breads</div>
                     <div class="menu-list">
                         
                         <div class="menu-item">
                             <div class="menu-item-header">
-                                <span style="color: var(--text-primary);">Country Loaf</span>
+                                <span>Country Loaf</span>
                             </div>
                             <div class="menu-item-desc">A classic French-style rustic sourdough boule with an open crumb and crunchy crust. Also available as a pan loaf.</div>
                         </div>
 
                         <div class="menu-item">
                             <div class="menu-item-header">
-                                <span style="color: var(--text-primary);">Sesame</span>
+                                <span>Sesame</span>
                             </div>
                             <div class="menu-item-desc">Our country sourdough dough wrapped in black, white, and brown sesame seeds in a loaf pan.</div>
                         </div>
 
                         <div class="menu-item">
                             <div class="menu-item-header">
-                                <span style="color: var(--text-primary);">Multigrain</span>
+                                <span>Multigrain</span>
                             </div>
                             <div class="menu-item-desc">A hearty loaf bread loaded with whole grains and sunflower, pumpkin, and flax seeds.</div>
                         </div>
 
                         <div class="menu-item">
                             <div class="menu-item-header">
-                                <span style="color: var(--text-primary);">Raisin + Pecan</span>
+                                <span>Raisin + Pecan</span>
                             </div>
                             <div class="menu-item-desc">A whole grain loaf that’s nutty and a bit sweet due to the inclusion of pecans and flame raisins.</div>
                         </div>
 
                         <div class="menu-item">
                             <div class="menu-item-header">
-                                <span style="color: var(--text-primary);">Sprouted Spelt</span>
+                                <span>Sprouted Spelt</span>
                             </div>
                             <div class="menu-item-desc">A bold 100% whole grain loaf made from sprouted spelt flour for maximum nutrition and digestibility.</div>
                         </div>
 
                         <div class="menu-item">
                             <div class="menu-item-header">
-                                <span style="color: var(--text-primary);">Whole Wheat</span>
+                                <span>Whole Wheat</span>
                             </div>
                             <div class="menu-item-desc">A whole grain wheat loaf topped with wheat bran. Simple, hearty, delicious.</div>
                         </div>
@@ -406,8 +467,8 @@
 
                       <div class="menu-item">
                         <div class="menu-item-header">
-                            <span style="color: var(--text-primary);">Naturally Leavened Croissants</span>
-                            <span style="color: var(--color-accent-blue); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Saturdays only</span>
+                            <span>Naturally Leavened Croissants</span>
+                            <span class="badge-schedule">Saturdays only</span>
                         </div>
                         <div class="menu-item-desc">
                             <em>Classic, Chocolate, or Almond</em><br>
@@ -417,15 +478,15 @@
 
                         <div class="menu-item">
                             <div class="menu-item-header">
-                                <span style="color: var(--text-primary);">Sourdough Cinnamon Roll</span>
-                                <span style="color: var(--color-accent-blue); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Saturdays only</span>
+                                <span>Sourdough Cinnamon Roll</span>
+                                <span class="badge-schedule">Saturdays only</span>
                             </div>
                             <div class="menu-item-desc">Naturally-leavened brioche dough, cinnamon, real vanilla, and a touch of cardamom come together for this Nordic-inspired treat.</div>
                         </div>
 
                         <div class="menu-item">
                             <div class="menu-item-header">
-                                <span style="color: var(--text-primary);">Seasonal Galette</span>
+                                <span>Seasonal Galette</span>
                             </div>
                             <div class="menu-item-desc">Grass-fed, vat-cultured butter gives these open-faced pies featuring seasonal fruit an exceptional melt-in-your-mouth crust.</div>
                         </div>
@@ -447,11 +508,11 @@
                 <div class="tips-container">
                     <div class="tip-block">
                         <div class="tip-title">Day 1 to 3: The Pantry or Bread Box</div>
-                        <div class="tip-desc">Keep your bread cut-side down wrapped in a towel or in a paper bag. Store in the pantry, cupboard, or dedicated bread box to avoid drafts that dry out the bread prematurely. If using a plastic bag, keep it slightly open to prevent trapping moisture. Reheating revitalizes bread. </div>
+                        <div class="tip-desc">Keep your bread cut-side down wrapped in a towel or in a paper bag. Store in the pantry, cupboard, or dedicated bread box to avoid drafts that dry out the bread prematurely. If using a plastic bag, keep it slightly open to prevent trapping moisture. Reheating revitalizes bread.</div>
                     </div>
                     <div class="tip-block">
                         <div class="tip-title">Long Term: The Freezer</div>
-                        <div class="tip-desc"> Our breads and pastries freeze exceptionally well and the freezer is the best way to extend the life of your purchase.  Thaw frozen bread overnight and then store like fresh.  Or slice the loaf completely before freezing and drop slices directly from the freezer straight into the toaster or oven.</div>
+                        <div class="tip-desc">Our breads and pastries freeze exceptionally well and the freezer is the best way to extend the life of your purchase. Thaw frozen bread overnight and then store like fresh. Or slice the loaf completely before freezing and drop slices directly from the freezer straight into the toaster or oven.</div>
                     </div>
                 </div>
             </section>

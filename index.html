@@ -9,7 +9,7 @@
         :root {
             /* --- Color Palette --- */
             --bg-primary: #FDFBF7;       /* Soft linen background */
-            --bg-surface: #FFFFFF;       /* Pure white for image placeholders */
+            --bg-surface: #FFFFFF;       /* Pure white for containers/cards */
             --text-primary: #2C2A29;     /* Deep charcoal text */
             --text-muted: #6C6A68;       /* Softer grey/brown for descriptions */
             --color-clay: #A3826C;       /* Contact card / warm earth */
@@ -35,22 +35,19 @@
         }
 
         .wrapper {
-            max-width: 720px;
+            max-width: 760px;
             margin: 0 auto;
-            padding: 60px 24px;
+            padding: 50px 24px;
         }
 
-        /* --- Navigation Layout --- */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid var(--neutral-border);
-            padding-bottom: 20px;
+            padding-bottom: 18px;
             margin-bottom: 35px;
-            font-size: 0.82rem;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
+            gap: 16px;
             width: 100%;
         }
 
@@ -61,7 +58,7 @@
         }
 
         nav .logo {
-            height: 48px;
+            height: 42px;
             width: auto;
             display: block;
             filter: invert(0.9) brightness(0.4) contrast(1.2); 
@@ -69,31 +66,34 @@
         
         nav .links {
             display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-            justify-content: flex-end;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: nowrap;
+            white-space: nowrap;
         }
 
         nav .links a { 
             color: var(--color-accent-blue); 
             text-decoration: none; 
-            white-space: nowrap;
-            font-weight: 500;
+            font-size: 0.75rem;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            font-weight: 600;
             transition: opacity 0.2s ease; 
         }
         
         nav .links a:hover { 
-            opacity: 0.7; 
+            opacity: 0.65; 
         }
 
-        /* --- Hero Image --- */
         .hero-image-placeholder {
             width: 100%;
             aspect-ratio: 16 / 9;
             background-color: var(--bg-surface);
             border: 1px solid var(--neutral-border);
-            margin-bottom: 50px;
+            margin-bottom: 45px;
             overflow: hidden;
+            border-radius: 2px;
         }
 
         .hero-image-placeholder img {
@@ -104,7 +104,6 @@
             object-position: center;
         }
 
-        /* --- Typography & Tone --- */
         h1 {
             font-family: var(--font-accent);
             font-size: 2.3rem;
@@ -150,7 +149,6 @@
             color: var(--text-primary); 
         }
 
-        /* --- Logistics & Schedule Grid --- */
         .market-list { margin-bottom: 40px; }
         .market-item { 
             margin-bottom: 20px; 
@@ -177,7 +175,6 @@
             text-decoration: underline; 
         }
 
-        /* --- Blog Section --- */
         .blog-date {
             font-size: 0.85rem;
             color: var(--text-muted);
@@ -186,7 +183,6 @@
             margin-bottom: 16px;
         }
 
-        /* --- Menu Styles --- */
         .menu-intro {
             font-size: 1rem;
             color: var(--text-primary);
@@ -208,7 +204,7 @@
             flex-direction: column;
             gap: 18px;
             padding-left: 0;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
         
         .menu-item {
@@ -237,12 +233,13 @@
             line-height: 1.55;
         }
 
-        /* --- Schedule List Styles --- */
         .specials-schedule {
-            margin-top: 20px;
+            margin-top: 16px;
+            margin-bottom: 35px;
             background-color: var(--bg-surface);
             border: 1px solid var(--neutral-border);
             padding: 24px;
+            border-radius: 2px;
         }
 
         .schedule-market-title {
@@ -279,7 +276,6 @@
             font-weight: 500;
         }
 
-        /* --- Care & Utility Systems --- */
         .tips-container { margin-top: 20px; }
         .tip-block { margin-bottom: 24px; }
         .tip-title { 
@@ -295,7 +291,6 @@
             line-height: 1.6;
         }
 
-        /* --- Highlighted Contact Card Styles --- */
         .contact-card-section {
             margin-top: 60px;
             padding-top: 30px;
@@ -368,27 +363,34 @@
             text-transform: uppercase; 
         }
 
-        /* --- Mobile Responsiveness --- */
-        @media (max-width: 600px) {
-            .wrapper { padding: 36px 18px; }
-            h1 { font-size: 1.9rem; }
-            nav { 
-                flex-direction: column; 
-                align-items: center; 
-                gap: 14px; 
+        @media (max-width: 680px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 14px;
+                padding-bottom: 14px;
             }
-            nav .links { 
-                margin-top: 2px;
+            nav .links {
                 gap: 12px;
-                justify-content: center;
+                overflow-x: auto;
+                max-width: 100%;
+                padding-bottom: 4px;
             }
+            nav .links a {
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .wrapper { padding: 30px 16px; }
+            h1 { font-size: 1.8rem; }
             .menu-item-header {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 2px;
             }
             .specials-schedule {
-                padding: 18px;
+                padding: 16px;
             }
         }
     </style>
@@ -462,6 +464,48 @@
                     Our standard weekly menu features Country, Sesame, Multigrain, and Raisin Pecan sourdough loaves, alongside seasonal fruit galettes. The remainder of our bread and pastry selections rotate monthly to bring in seasonal ingredients and special items.
                 </p>
 
+                <!-- Standard Offerings placed first -->
+                <div class="menu-category-title">Standard Offerings</div>
+                <div class="menu-list">
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span>Country Loaf</span>
+                        </div>
+                        <div class="menu-item-desc">A classic French-style rustic sourdough boule with an open crumb and crunchy crust. Also available as a pan loaf.</div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span>Sesame</span>
+                        </div>
+                        <div class="menu-item-desc">Our country sourdough dough wrapped in black, white, and brown sesame seeds in a loaf pan.</div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span>Multigrain</span>
+                        </div>
+                        <div class="menu-item-desc">A hearty loaf bread loaded with whole grains and sunflower, pumpkin, and flax seeds.</div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span>Raisin + Pecan</span>
+                        </div>
+                        <div class="menu-item-desc">A whole grain loaf that’s nutty and a bit sweet due to the inclusion of pecans and flame raisins.</div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span>Seasonal Galette</span>
+                        </div>
+                        <div class="menu-item-desc">Grass-fed, vat-cultured butter gives these open-faced pies featuring seasonal fruit an exceptional melt-in-your-mouth crust.</div>
+                    </div>
+
+                </div>
+
+                <!-- October Specials placed second -->
                 <div class="menu-category-title">October Specials</div>
                 <div class="menu-list">
                     
@@ -504,46 +548,6 @@
                         <li><strong>10/19:</strong> Spelt Sourdough</li>
                         <li><strong>10/26:</strong> Rosemary and Olive Oil Sourdough</li>
                     </ul>
-                </div>
-
-                <div class="menu-category-title">Standard Offerings</div>
-                <div class="menu-list">
-                    
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <span>Country Loaf</span>
-                        </div>
-                        <div class="menu-item-desc">A classic French-style rustic sourdough boule with an open crumb and crunchy crust. Also available as a pan loaf.</div>
-                    </div>
-
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <span>Sesame</span>
-                        </div>
-                        <div class="menu-item-desc">Our country sourdough dough wrapped in black, white, and brown sesame seeds in a loaf pan.</div>
-                    </div>
-
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <span>Multigrain</span>
-                        </div>
-                        <div class="menu-item-desc">A hearty loaf bread loaded with whole grains and sunflower, pumpkin, and flax seeds.</div>
-                    </div>
-
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <span>Raisin + Pecan</span>
-                        </div>
-                        <div class="menu-item-desc">A whole grain loaf that’s nutty and a bit sweet due to the inclusion of pecans and flame raisins.</div>
-                    </div>
-
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <span>Seasonal Galette</span>
-                        </div>
-                        <div class="menu-item-desc">Grass-fed, vat-cultured butter gives these open-faced pies featuring seasonal fruit an exceptional melt-in-your-mouth crust.</div>
-                    </div>
-
                 </div>
 
             </section>
